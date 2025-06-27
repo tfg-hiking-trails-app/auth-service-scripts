@@ -11,6 +11,8 @@ CREATE TABLE IF NOT EXISTS User (
     date_of_birth DATE,
     last_login TIMESTAMP NULL DEFAULT NULL,
     profile_picture_url VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
     FOREIGN KEY (role_id) REFERENCES Role(id),
     FOREIGN KEY (status_id) REFERENCES Status(id)
